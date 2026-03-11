@@ -787,6 +787,15 @@ td strong {
   max-width: 700px;
 }
 
+.question-block {
+  text-align: left;
+}
+
+.question-block .subtext {
+  margin-top: 0.25rem;
+  padding-left: 2.2rem;
+}
+
 .question-text {
   font-family: var(--font-heading);
   font-weight: 700;
