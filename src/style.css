@@ -71,15 +71,16 @@ body {
 /* ---- TECNASA Logo ---- */
 #tecnasa-logo {
   position: fixed;
-  bottom: 1.5rem;
+  bottom: 1.25rem;
   left: 2rem;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1rem;
-  color: var(--accent);
-  letter-spacing: 0.15em;
   z-index: 100;
-  opacity: 0.8;
+  opacity: 0.85;
+  line-height: 0;
+}
+
+#tecnasa-logo img {
+  height: 32px;
+  width: auto;
 }
 
 /* ---- Navigation Hints ---- */
@@ -723,14 +724,20 @@ td strong {
     gap: 1.5rem;
   }
 
-  #tecnasa-logo,
+  #tecnasa-logo {
+    bottom: 0.75rem;
+    left: 1rem;
+  }
+
+  #tecnasa-logo img {
+    height: 24px;
+  }
+
   #slide-indicator {
     font-size: 0.75rem;
     bottom: 1rem;
+    right: 1rem;
   }
-
-  #tecnasa-logo { left: 1rem; }
-  #slide-indicator { right: 1rem; }
 
   #nav-hints {
     display: none;
