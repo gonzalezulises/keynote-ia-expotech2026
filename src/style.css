@@ -1,6 +1,7 @@
 /* ============================================
    TECNASA Keynote — EXPO TECH 2026
-   Dark mode presentation theme
+   Professional Keynote Design System
+   1920×1080 · 16:9 · Inter
    ============================================ */
 
 :root {
@@ -9,15 +10,30 @@
   --accent-glow: rgba(55, 184, 236, 0.15);
   --text-primary: #FFFFFF;
   --text-secondary: #A1A1AA;
-  --surface: #FFFFFF;
-  --surface-alt: #F4F4F5;
+  --text-muted: #71717A;
+  --surface: rgba(255, 255, 255, 0.03);
+  --surface-border: rgba(255, 255, 255, 0.08);
   --positive: #10B981;
   --negative: #EF4444;
   --warning: #EF4444;
   --font-heading: 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --transition: 300ms ease;
+  --transition: 400ms ease;
+
+  /* Keynote scale: 1920px base */
+  --slide-pad-x: 6.25vw;   /* 120px @ 1920 */
+  --slide-pad-y: 3.7vh;    /* 40px @ 1080 */
+  --max-text: 900px;
+
+  /* Typography scale (px targets @ 1920×1080) */
+  --fs-hero: clamp(2.5rem, 5vw, 96px);       /* 72–96px */
+  --fs-title: clamp(2rem, 3.75vw, 72px);     /* 56–72px */
+  --fs-subtitle: clamp(1.5rem, 2.5vw, 48px); /* 40–48px */
+  --fs-body: clamp(1.25rem, 1.875vw, 36px);  /* 32–36px */
+  --fs-small: clamp(1rem, 1.46vw, 28px);     /* 24–28px */
+  --fs-source: clamp(0.75rem, 1vw, 20px);    /* 16–20px */
+  --fs-indicator: clamp(0.7rem, 0.8vw, 16px);
 }
 
 *, *::before, *::after {
@@ -38,7 +54,7 @@ body {
   font-weight: 400;
   background: var(--bg-primary);
   color: var(--text-primary);
-  line-height: 1.5;
+  line-height: 1.4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -58,49 +74,49 @@ body {
 /* ---- Slide Indicator ---- */
 #slide-indicator {
   position: fixed;
-  bottom: 1.5rem;
-  right: 2rem;
+  bottom: 2rem;
+  right: 2.5rem;
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: var(--fs-indicator);
   color: var(--text-secondary);
   z-index: 100;
-  opacity: 0.7;
+  opacity: 0.6;
   pointer-events: none;
 }
 
 /* ---- TECNASA Logo ---- */
 #tecnasa-logo {
   position: fixed;
-  bottom: 1.25rem;
-  left: 2rem;
+  bottom: 1.5rem;
+  left: 2.5rem;
   z-index: 100;
   opacity: 0.85;
   line-height: 0;
 }
 
 #tecnasa-logo img {
-  height: 128px;
+  height: clamp(64px, 6.67vw, 128px);
   width: auto;
 }
 
 /* ---- Navigation Hints ---- */
 #nav-hints {
   position: fixed;
-  bottom: 1.5rem;
+  bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 1.5rem;
-  font-size: 0.75rem;
+  gap: 2rem;
+  font-size: var(--fs-indicator);
   color: var(--text-secondary);
-  opacity: 0.4;
+  opacity: 0.3;
   z-index: 100;
   transition: opacity var(--transition);
   pointer-events: none;
 }
 
 body:hover #nav-hints {
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 /* ---- Speaker Notes ---- */
@@ -128,10 +144,10 @@ body:hover #nav-hints {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 2.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: var(--fs-source);
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -152,9 +168,9 @@ body:hover #nav-hints {
 }
 
 #speaker-notes-content {
-  padding: 1rem 2rem 2rem;
-  font-size: 0.95rem;
-  line-height: 1.7;
+  padding: 1rem 2.5rem 2rem;
+  font-size: var(--fs-small);
+  line-height: 1.6;
   color: var(--text-secondary);
   max-width: 80ch;
 }
@@ -172,11 +188,11 @@ body:hover #nav-hints {
   align-items: center;
   justify-content: center;
   scroll-snap-align: start;
-  padding: 4rem 3rem;
+  padding: var(--slide-pad-y) var(--slide-pad-x);
   position: relative;
   opacity: 0;
-  transform: translateY(20px);
-  animation: slideIn 0.6s ease forwards;
+  transform: translateY(12px);
+  animation: slideIn 0.5s ease forwards;
 }
 
 @keyframes slideIn {
@@ -188,7 +204,7 @@ body:hover #nav-hints {
 
 .slide-content {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--max-text);
   margin: 0 auto;
 }
 
@@ -198,19 +214,32 @@ body:hover #nav-hints {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
-/* ---- Section Slides ---- */
+/* Wide content (tables, grids) can break out */
+.slide-content.wide {
+  max-width: 1400px;
+}
+
+/* ---- Section / Transition Slides ---- */
 .section-slide {
   background: radial-gradient(ellipse at center, rgba(55, 184, 236, 0.06) 0%, transparent 70%);
 }
 
-/* ---- Typography ---- */
+/* ============================================
+   TYPOGRAPHY — 3-level hierarchy
+   Level 1: Hero/Title  (72–96px)
+   Level 2: Subtitle     (40–48px)
+   Level 3: Body         (32–36px)
+   Source/meta            (16–20px)
+   ============================================ */
+
+/* Level 1 — Hero */
 .hero-title {
   font-family: var(--font-heading);
   font-weight: 900;
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: var(--fs-hero);
   line-height: 1.1;
   color: var(--text-primary);
   letter-spacing: -0.02em;
@@ -219,18 +248,18 @@ body:hover #nav-hints {
 .hero-number {
   font-family: var(--font-heading);
   font-weight: 900;
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-size: var(--fs-hero);
   line-height: 1.05;
   color: var(--accent);
   letter-spacing: -0.03em;
 }
 
 .hero-number.inline {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: var(--fs-title);
 }
 
 .hero-number.smaller {
-  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  font-size: var(--fs-subtitle);
 }
 
 .hero-number.warning-color {
@@ -239,7 +268,7 @@ body:hover #nav-hints {
 
 .hero-sub {
   display: block;
-  font-size: 0.35em;
+  font-size: 0.4em;
   font-weight: 700;
   color: var(--text-primary);
   margin-top: 0.3em;
@@ -248,17 +277,18 @@ body:hover #nav-hints {
 
 .hero-label {
   display: block;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   font-weight: 400;
   color: var(--text-secondary);
   margin-top: 0.25rem;
   letter-spacing: 0;
 }
 
+/* Level 2 — Subtitle / Slide Heading */
 .subtitle {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: clamp(1.2rem, 3vw, 2.2rem);
+  font-size: var(--fs-subtitle);
   color: var(--accent);
   margin-top: -0.5rem;
 }
@@ -266,47 +296,25 @@ body:hover #nav-hints {
 .slide-heading {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  font-size: var(--fs-subtitle);
   color: var(--text-primary);
   margin-bottom: 1.5rem;
 }
 
 .section-sub {
-  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-size: var(--fs-body);
   color: var(--text-secondary);
-  max-width: 50ch;
+  max-width: 22ch;
 }
 
+/* Level 3 — Body */
 .context-line {
-  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  font-size: var(--fs-body);
   color: var(--text-secondary);
-}
-
-.tag {
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--accent);
-}
-
-.label {
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-secondary);
-  margin-bottom: 0.25rem;
-}
-
-.source {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  font-style: italic;
 }
 
 .highlight-text {
-  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  font-size: var(--fs-body);
   color: var(--text-primary);
 }
 
@@ -315,31 +323,63 @@ body:hover #nav-hints {
 }
 
 .subtext {
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
   color: var(--text-secondary);
 }
 
 .analogy {
-  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  font-size: var(--fs-body);
   color: var(--text-secondary);
-  max-width: 50ch;
+  max-width: 30ch;
   margin-top: 0.5rem;
 }
 
 .warning-text {
   color: var(--warning);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: var(--fs-body);
 }
 
+/* Tags & Labels */
+.tag {
+  font-size: var(--fs-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+}
+
+.label {
+  font-size: var(--fs-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.source {
+  font-size: var(--fs-source);
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.source-text {
+  font-size: var(--fs-source);
+  color: var(--text-muted);
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+/* TECNASA branding */
 .tecnasa-mention {
   color: var(--accent);
-  font-size: 0.95rem;
+  font-size: var(--fs-body);
 }
 
 .tecnasa-tagline {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: var(--fs-body);
   margin-top: 1rem;
 }
 
@@ -349,11 +389,11 @@ body:hover #nav-hints {
 }
 
 .speaker-info p {
-  font-size: 1.1rem;
+  font-size: var(--fs-body);
 }
 
 .speaker-info strong {
-  font-size: 1.3rem;
+  font-size: var(--fs-subtitle);
 }
 
 .speaker-info.final {
@@ -361,7 +401,7 @@ body:hover #nav-hints {
 }
 
 .event-info {
-  font-size: 1rem;
+  font-size: var(--fs-small);
   color: var(--text-secondary);
 }
 
@@ -373,17 +413,17 @@ body:hover #nav-hints {
 /* ---- Tables ---- */
 .table-wrapper {
   overflow-x: auto;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
 }
 
 .table-wrapper.compact {
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--surface);
   border: 1px solid rgba(55, 184, 236, 0.15);
   border-radius: 8px;
   overflow: hidden;
@@ -396,18 +436,18 @@ thead {
 th {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--accent);
-  padding: 0.75rem 1rem;
+  padding: 1rem 1.5rem;
   text-align: left;
   border-bottom: 1px solid rgba(55, 184, 236, 0.2);
 }
 
 td {
-  padding: 0.65rem 1rem;
-  font-size: 0.95rem;
+  padding: 0.85rem 1.5rem;
+  font-size: var(--fs-body);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   color: var(--text-primary);
 }
@@ -420,23 +460,15 @@ tr:nth-child(even) {
   background: rgba(255, 255, 255, 0.02);
 }
 
-td.positive {
-  color: var(--positive);
-}
-
-td.negative {
-  color: var(--negative);
-}
-
-td strong {
-  font-weight: 700;
-}
+td.positive { color: var(--positive); }
+td.negative { color: var(--negative); }
+td strong { font-weight: 700; }
 
 /* ---- Split Layout ---- */
 .split-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 2.5rem;
   width: 100%;
 }
 
@@ -452,8 +484,8 @@ td strong {
 
 .feature-list li {
   position: relative;
-  padding: 0.4rem 0 0.4rem 1.2rem;
-  font-size: 0.95rem;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  font-size: var(--fs-body);
   color: var(--text-secondary);
 }
 
@@ -461,9 +493,9 @@ td strong {
   content: '';
   position: absolute;
   left: 0;
-  top: 0.85rem;
-  width: 6px;
-  height: 6px;
+  top: 1em;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: var(--accent);
 }
@@ -473,42 +505,37 @@ td strong {
 }
 
 .list-heading {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   font-weight: 700;
   margin: 1rem 0 0.5rem;
 }
 
-.positive-heading {
-  color: var(--positive);
-}
-
-.warning-heading {
-  color: var(--warning);
-}
+.positive-heading { color: var(--positive); }
+.warning-heading { color: var(--warning); }
 
 /* ---- Cards Grid ---- */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .info-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--surface);
   border-left: 4px solid var(--accent);
   border-radius: 0 8px 8px 0;
-  padding: 1.25rem;
+  padding: 1.5rem;
 }
 
 .info-card h3 {
-  font-size: 0.95rem;
+  font-size: var(--fs-small);
   font-weight: 700;
   color: var(--accent);
   margin-bottom: 0.5rem;
 }
 
 .info-card p {
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
   color: var(--text-secondary);
   margin-top: 0.25rem;
 }
@@ -522,7 +549,7 @@ td strong {
   background: rgba(55, 184, 236, 0.05);
   border: 1px solid rgba(55, 184, 236, 0.15);
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: 2rem;
   margin-top: 1.5rem;
 }
 
@@ -532,14 +559,14 @@ td strong {
 }
 
 .callout h3 {
-  font-size: 1.1rem;
+  font-size: var(--fs-body);
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .callout p {
-  font-size: 0.95rem;
+  font-size: var(--fs-body);
   color: var(--text-secondary);
   margin-top: 0.3rem;
 }
@@ -548,15 +575,15 @@ td strong {
 .elevations {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 2rem;
   width: 100%;
 }
 
 .elevation-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 2rem;
   text-align: center;
   transition: all var(--transition);
 }
@@ -575,7 +602,7 @@ td strong {
 .elevation-number {
   font-family: var(--font-heading);
   font-weight: 900;
-  font-size: 3rem;
+  font-size: var(--fs-title);
   color: var(--accent);
   line-height: 1;
   margin-bottom: 0.5rem;
@@ -583,41 +610,33 @@ td strong {
 
 .elevation-card h3 {
   font-weight: 800;
-  font-size: 1.1rem;
+  font-size: var(--fs-small);
   letter-spacing: 0.1em;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .elevation-card p {
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
   color: var(--text-secondary);
 }
 
 /* ---- Metrics Grid ---- */
 .metrics-grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 2rem;
   margin-top: 2rem;
 }
 
-.metrics-grid.four-col {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.metrics-grid.three-col {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.metrics-grid.two-col {
-  grid-template-columns: repeat(2, 1fr);
-}
+.metrics-grid.four-col { grid-template-columns: repeat(4, 1fr); }
+.metrics-grid.three-col { grid-template-columns: repeat(3, 1fr); }
+.metrics-grid.two-col { grid-template-columns: repeat(2, 1fr); }
 
 .metric-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
   border-radius: 12px;
-  padding: 1.5rem 1.2rem;
+  padding: 2rem 1.5rem;
   text-align: center;
   transition: all var(--transition);
 }
@@ -629,20 +648,20 @@ td strong {
 
 .metric-label {
   font-weight: 700;
-  font-size: 0.75rem;
+  font-size: var(--fs-source);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .metric-card .hero-number {
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: var(--fs-subtitle);
   margin-bottom: 0.5rem;
 }
 
 .metric-detail {
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   color: var(--text-secondary);
   line-height: 1.4;
   margin-bottom: 0.75rem;
@@ -650,20 +669,11 @@ td strong {
 
 .metric-highlight {
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   margin-bottom: 0.75rem;
 }
 
-.metric-highlight.positive {
-  color: var(--positive);
-}
-
-.source-text {
-  font-size: 0.65rem;
-  color: var(--text-muted);
-  font-style: italic;
-  letter-spacing: 0.02em;
-}
+.metric-highlight.positive { color: var(--positive); }
 
 .metric-list {
   list-style: none;
@@ -673,12 +683,12 @@ td strong {
 }
 
 .metric-list li {
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   color: var(--text-secondary);
   line-height: 1.5;
-  padding-left: 1rem;
+  padding-left: 1.25rem;
   position: relative;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .metric-list li::before {
@@ -693,7 +703,7 @@ td strong {
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 1rem;
   margin: 1.5rem 0 0.5rem;
 }
 
@@ -701,27 +711,27 @@ td strong {
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 0.25rem;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .metric-stats .hero-number {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: var(--fs-subtitle);
   margin-bottom: 0;
 }
 
 .metric-stats .hero-label {
-  font-size: 0.8rem;
+  font-size: var(--fs-small);
   color: var(--text-secondary);
 }
 
 /* ---- Hero Stats (row) ---- */
 .hero-stats {
   display: flex;
-  gap: 3rem;
+  gap: 4rem;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 1.5rem 0;
+  margin: 2rem 0;
 }
 
 .hero-stat {
@@ -732,7 +742,7 @@ td strong {
 .bottom-stats {
   margin-top: 1.5rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--surface-border);
 }
 
 .bottom-stats p {
@@ -743,38 +753,38 @@ td strong {
 .imperatives {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .imperative {
   display: flex;
-  gap: 1.25rem;
+  gap: 1.5rem;
   align-items: flex-start;
   background: rgba(255, 255, 255, 0.02);
   border-radius: 8px;
-  padding: 1rem 1.25rem;
+  padding: 1.25rem 1.5rem;
   border-left: 3px solid var(--accent);
 }
 
 .imp-num {
   font-family: var(--font-heading);
   font-weight: 900;
-  font-size: 1.8rem;
+  font-size: var(--fs-subtitle);
   color: var(--accent);
   line-height: 1;
   flex-shrink: 0;
-  width: 2rem;
+  width: 2.5rem;
 }
 
 .imperative h3 {
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: var(--fs-body);
   color: var(--text-primary);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
 }
 
 .imperative p {
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
   color: var(--text-secondary);
 }
 
@@ -782,9 +792,9 @@ td strong {
 .questions {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
   margin: 2rem 0;
-  max-width: 700px;
+  max-width: var(--max-text);
 }
 
 .question-block {
@@ -792,14 +802,14 @@ td strong {
 }
 
 .question-block .subtext {
-  margin-top: 0.25rem;
-  padding-left: 2.2rem;
+  margin-top: 0.5rem;
+  padding-left: 3rem;
 }
 
 .question-text {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-size: var(--fs-body);
   color: var(--text-primary);
   text-align: left;
   line-height: 1.3;
@@ -808,28 +818,28 @@ td strong {
 .q-num {
   color: var(--accent);
   font-weight: 900;
-  margin-right: 0.5rem;
+  margin-right: 0.75rem;
 }
 
 /* ---- Closing Quote ---- */
 .closing-quote {
   margin-top: 2rem;
-  padding: 2rem;
+  padding: 2.5rem;
   border-left: 4px solid var(--accent);
   text-align: left;
-  max-width: 500px;
+  max-width: var(--max-text);
 }
 
 .closing-quote p {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-size: var(--fs-body);
   color: var(--text-primary);
   line-height: 1.5;
 }
 
 .closing-highlight {
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-size: var(--fs-subtitle);
   color: var(--accent);
   margin: 0.5rem 0;
 }
@@ -839,7 +849,9 @@ td strong {
   opacity: 1;
 }
 
-/* ---- Responsive ---- */
+/* ============================================
+   RESPONSIVE — Tablet
+   ============================================ */
 @media (max-width: 900px) {
   .slide {
     padding: 3rem 1.5rem;
@@ -876,7 +888,7 @@ td strong {
   }
 
   #tecnasa-logo img {
-    height: 96px;
+    height: 64px;
   }
 
   #slide-indicator {
@@ -894,6 +906,9 @@ td strong {
   }
 }
 
+/* ============================================
+   RESPONSIVE — Mobile
+   ============================================ */
 @media (max-width: 600px) {
   .slide {
     padding: 2rem 1rem;
@@ -913,7 +928,9 @@ td strong {
   }
 }
 
-/* ---- Print / PDF ---- */
+/* ============================================
+   PRINT / PDF
+   ============================================ */
 @media print {
   html {
     scroll-snap-type: none;
