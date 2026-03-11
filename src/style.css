@@ -609,6 +609,10 @@ td strong {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.metrics-grid.two-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .metric-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -829,7 +833,8 @@ td strong {
     gap: 1rem;
   }
 
-  .metrics-grid.three-col {
+  .metrics-grid.three-col,
+  .metrics-grid.two-col {
     grid-template-columns: 1fr;
   }
 
