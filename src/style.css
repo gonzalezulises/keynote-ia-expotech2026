@@ -828,6 +828,12 @@ td strong {
   line-height: 1.5;
 }
 
+.closing-highlight {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--accent);
+  margin: 0.5rem 0;
+}
+
 /* ---- Active Slide Visual Cue ---- */
 .slide.active {
   opacity: 1;
