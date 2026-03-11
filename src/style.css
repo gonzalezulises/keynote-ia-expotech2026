@@ -594,12 +594,19 @@ td strong {
   color: var(--text-secondary);
 }
 
-/* ---- Metrics Grid (4-col) ---- */
-.metrics-grid.four-col {
+/* ---- Metrics Grid ---- */
+.metrics-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   margin-top: 2rem;
+}
+
+.metrics-grid.four-col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.metrics-grid.three-col {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .metric-card {
@@ -652,6 +659,24 @@ td strong {
   color: var(--text-muted);
   font-style: italic;
   letter-spacing: 0.02em;
+}
+
+.metric-stats {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.metric-stats .hero-number {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 0;
+}
+
+.metric-stats .hero-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
 }
 
 /* ---- Hero Stats (row) ---- */
@@ -778,6 +803,10 @@ td strong {
   .metrics-grid.four-col {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+  }
+
+  .metrics-grid.three-col {
+    grid-template-columns: 1fr;
   }
 
   .split-layout.three-col {
