@@ -594,6 +594,66 @@ td strong {
   color: var(--text-secondary);
 }
 
+/* ---- Metrics Grid (4-col) ---- */
+.metrics-grid.four-col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem 1.2rem;
+  text-align: center;
+  transition: all var(--transition);
+}
+
+.metric-card:hover {
+  border-color: rgba(55, 184, 236, 0.3);
+  background: rgba(55, 184, 236, 0.05);
+}
+
+.metric-label {
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.metric-card .hero-number {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.metric-detail {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.metric-highlight {
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.metric-highlight.positive {
+  color: var(--positive);
+}
+
+.source-text {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
 /* ---- Hero Stats (row) ---- */
 .hero-stats {
   display: flex;
@@ -715,6 +775,11 @@ td strong {
     grid-template-columns: 1fr;
   }
 
+  .metrics-grid.four-col {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
   .split-layout.three-col {
     grid-template-columns: 1fr;
   }
@@ -760,6 +825,10 @@ td strong {
 
   .imp-num {
     font-size: 1.4rem;
+  }
+
+  .metrics-grid.four-col {
+    grid-template-columns: 1fr;
   }
 }
 
