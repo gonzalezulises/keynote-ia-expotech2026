@@ -689,6 +689,14 @@ td strong {
   font-weight: 700;
 }
 
+.index-hero {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
 .metric-stats {
   display: flex;
   align-items: baseline;
