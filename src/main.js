@@ -42,7 +42,7 @@ function updateUI() {
   if (notes) {
     notesContent.textContent = notes;
   } else {
-    notesContent.textContent = '(Sin notas para este slide)';
+    notesContent.textContent = '';
   }
 
   // URL hash
