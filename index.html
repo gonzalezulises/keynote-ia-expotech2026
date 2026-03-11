@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IA en 2026 — Más allá de la automatización | TECNASA · EXPO TECH 2026</title>
+  <meta name="description" content="Keynote: Inteligencia Artificial en logística, Panamá y Latinoamérica. EXPO TECH 2026 por Ulises González, TECNASA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <!-- Progress bar -->
+  <div id="progress-bar" aria-hidden="true"></div>
+
+  <!-- Slide indicator -->
+  <div id="slide-indicator" aria-live="polite">1 / 30</div>
+
+  <!-- TECNASA logo -->
+  <div id="tecnasa-logo">TECNASA</div>
+
+  <!-- Speaker notes panel -->
+  <div id="speaker-notes" class="hidden" aria-label="Notas del presentador">
+    <div id="speaker-notes-header">
+      <span>Speaker Notes</span>
+      <button id="close-notes" aria-label="Cerrar notas">&times;</button>
+    </div>
+    <div id="speaker-notes-content"></div>
+  </div>
+
+  <!-- Navigation hints -->
+  <div id="nav-hints">
+    <span>&larr; &rarr; Navegar</span>
+    <span>N Notas</span>
+    <span>F Fullscreen</span>
+  </div>
+
+  <!-- SLIDES -->
+  <div id="slides-container">
+
+    <!-- SLIDE 01 — Portada -->
+    <section class="slide" data-notes="Saludo breve. &quot;Buenos días/tardes. Soy Ulises González, especialista en transformación digital e inteligencia artificial, y hoy estoy aquí representando a TECNASA — una empresa que lleva más de 50 años ayudando a las organizaciones de la región a resolver sus necesidades de negocio a través de la tecnología. Lo que vamos a ver hoy no es una charla genérica sobre IA. Está diseñada específicamente para quienes mueven carga, operan puertos, gestionan almacenes y mantienen las cadenas de suministro funcionando. Vamos con datos, no con hype.&quot;">
+      <div class="slide-content centered">
+        <p class="tag">TECNASA presenta</p>
+        <h1 class="hero-title">Inteligencia Artificial en 2026</h1>
+        <h2 class="subtitle">Más allá de la automatización</h2>
+        <div class="speaker-info">
+          <p><strong>Ulises González</strong></p>
+          <p>Especialista en Transformación Digital e IA</p>
+        </div>
+        <p class="event-info">EXPO TECH 2026 &middot; Cámara de Comercio de Panamá</p>
+        <p class="tecnasa-tagline"><em>TECNASA — Más de 50 años integrando soluciones de alta tecnología en la región</em></p>
+      </div>
+    </section>
+
+    <!-- SLIDE 02 — La paradoja -->
+    <section class="slide" data-notes="Dejar que el dato resuene 3 segundos en silencio. &quot;Casi todos adoptaron la tecnología. Casi nadie cambió el negocio.&quot; La pregunta no es SI usar IA — eso ya pasó. La pregunta es CÓMO usarla para que genere valor real. Y esa es una pregunta de transformación organizacional, no de tecnología. En TECNASA lo vemos todos los días: la herramienta está lista, lo que falta es el rediseño del proceso.">
+      <div class="slide-content centered">
+        <p class="context-line">El 88% de las organizaciones ya usa IA</p>
+        <h1 class="hero-number">Solo el 6%<br><span class="hero-sub">genera impacto financiero real</span></h1>
+        <p class="source">McKinsey 2025 &middot; 1,993 organizaciones &middot; 105 países</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 03 — El costo de no hacerlo bien -->
+    <section class="slide" data-notes="&quot;No estoy aquí para venderles IA. Estoy aquí para ayudarles a no desperdiciar dinero. Estos números no son de startups experimentales — son de empresas grandes, con presupuesto. El problema no es la tecnología. Es implementar sin datos limpios, sin procesos rediseñados, sin gobernanza.&quot;">
+      <div class="slide-content">
+        <div class="data-block">
+          <p class="label">MIT 2025:</p>
+          <h1 class="hero-number smaller">El 95% de pilotos de GenAI<br>no genera impacto medible en P&amp;L</h1>
+        </div>
+        <div class="data-block">
+          <p class="label">S&amp;P Global 2025:</p>
+          <p class="highlight-text"><strong>42%</strong> de empresas abandonó la mayoría de sus iniciativas de IA</p>
+          <p class="subtext">(vs. 17% en 2024 — se duplicó la tasa de abandono)</p>
+        </div>
+        <div class="data-block">
+          <p class="label">Gartner:</p>
+          <p class="highlight-text"><strong>57%</strong> de las organizaciones estima que sus datos no están listos para IA</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 04 — Sección: Panorama global -->
+    <section class="slide section-slide" data-notes="Transición. &quot;Vamos a hacer un recorrido rápido de lo que cambió en el último año, porque cambió más que en los 5 años anteriores combinados.&quot;">
+      <div class="slide-content centered">
+        <h1 class="hero-title">¿Qué cambió en 12 meses?</h1>
+        <p class="section-sub">El año más acelerado en la historia de la inteligencia artificial</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 05 — Modelos fundacionales -->
+    <section class="slide" data-notes="&quot;No hace falta memorizar estos nombres. Lo que importa: (1) la velocidad de mejora es sin precedente — OpenAI sacó 5 versiones mayores en 7 meses, (2) los modelos open-source ya igualaron a los cerrados a una fracción del costo, (3) hay modelos que corren en una laptop, sin necesidad de cloud.&quot;">
+      <div class="slide-content">
+        <h2 class="slide-heading">La carrera de modelos fundacionales</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Modelo</th><th>Lanzamiento</th><th>Capacidad clave</th></tr></thead>
+            <tbody>
+              <tr><td><strong>GPT-5 → 5.4</strong></td><td>Ago 2025 → Mar 2026</td><td>400K tokens · -45% errores factuales · 5 versiones en 7 meses</td></tr>
+              <tr><td><strong>Claude Opus 4.6</strong></td><td>Feb 2026</td><td>1M tokens de contexto · Tareas autónomas de 14.5 horas</td></tr>
+              <tr><td><strong>Gemini 3.1 Pro</strong></td><td>2025</td><td>Primer embedding multimodal: texto + imagen + video + audio</td></tr>
+              <tr><td><strong>DeepSeek-V3.2</strong></td><td>2025</td><td>Open-source (MIT) · Iguala GPT-4o · <strong>Cuesta 95% menos</strong></td></tr>
+              <tr><td><strong>Llama 4 (Meta)</strong></td><td>2025</td><td>10M tokens contexto · Corre en un solo GPU H100</td></tr>
+              <tr><td><strong>Phi-4 Mini</strong></td><td>2025</td><td>3.8B parámetros · <strong>Corre en laptops y teléfonos</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 06 — Costo cayó 280x -->
+    <section class="slide" data-notes="&quot;Usen esa analogía del flete. Para esta audiencia funciona perfecto. La barrera de acceso a IA empresarial desapareció.&quot;">
+      <div class="slide-content centered">
+        <p class="context-line">El costo de consultar un modelo de IA cayó</p>
+        <h1 class="hero-number">280x</h1>
+        <p class="context-line">en 18 meses</p>
+        <p class="highlight-text">De USD 20 → USD 0.07 por millón de tokens</p>
+        <p class="analogy"><em>Es como si el flete marítimo pasara de $20,000 a $71 por contenedor en año y medio</em></p>
+      </div>
+    </section>
+
+    <!-- SLIDE 07 — IA local -->
+    <section class="slide" data-notes="&quot;Esto es especialmente relevante para Panamá. Datos del Canal, trade finance, cadena de suministro — son datos sensibles. Con modelos open-source cuantizados, puedes correr IA de nivel empresarial en tu propio servidor. Y TECNASA, con su infraestructura de data centers en la región, está posicionada para habilitar exactamente esto.&quot;">
+      <div class="slide-content">
+        <h2 class="slide-heading">Ya no necesitas enviar tus datos a Silicon Valley</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Capacidad</th><th>Estado 2026</th></tr></thead>
+            <tbody>
+              <tr><td>Modelos cuantizados 4-bit</td><td><strong>-4x memoria</strong>, pérdida mínima</td></tr>
+              <tr><td>Latencia local</td><td><strong>5–20ms</strong> vs. 200–500ms en cloud</td></tr>
+              <tr><td>Gartner 2027</td><td>Modelos pequeños usados <strong>3x más</strong></td></tr>
+              <tr><td>75% de datos empresariales</td><td>Se procesan <strong>fuera de data centers</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          <h3>¿Por qué importa para logística panameña?</h3>
+          <p>Datos de embarque, rutas, costos, clientes, documentos aduaneros — <strong>procesados en tu infraestructura, con modelos open-source, sin dependencia externa</strong></p>
+          <p class="tecnasa-mention"><em>TECNASA opera 14+ data centers en la región — la infraestructura ya existe</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 08 — Sección: IA en logística -->
+    <section class="slide section-slide" data-notes="&quot;Dejemos de hablar de lo que la IA va a hacer algún día. Veamos lo que ya hizo. Resultados reales, empresas reales, números auditables.&quot;">
+      <div class="slide-content centered">
+        <h1 class="hero-title">¿Dónde funciona HOY la IA en logística?</h1>
+        <p class="section-sub">No promesas de futuro. Resultados medibles de 2025.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 09 — Maersk -->
+    <section class="slide" data-notes="&quot;Maersk no 'implementó IA'. Rediseñó completamente cómo monitoreaba sus activos. Sensores IoT en contenedores refrigerados miden temperatura, humedad y CO₂ en tiempo real. Machine learning predice fallas antes de que ocurran. Esto no es automatización — es inteligencia predictiva.&quot;">
+      <div class="slide-content">
+        <h2 class="slide-heading">Maersk &middot; 700+ buques &middot; IoT + Machine Learning</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Métrica</th><th>Resultado</th></tr></thead>
+            <tbody>
+              <tr><td>Downtime de embarcaciones</td><td class="positive"><strong>-30%</strong></td></tr>
+              <tr><td>Ahorro anual</td><td class="positive"><strong>USD 300 millones</strong></td></tr>
+              <tr><td>Predicción de fallas</td><td class="positive"><strong>3 semanas antes · 85% precisión</strong></td></tr>
+              <tr><td>Data points procesados</td><td><strong>2 mil millones / día</strong></td></tr>
+              <tr><td>Deterioro de carga reefer</td><td class="positive"><strong>-60%</strong></td></tr>
+              <tr><td>Consumo de combustible</td><td class="positive"><strong>-12%</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 10 — DHL + Amazon -->
+    <section class="slide" data-notes="&quot;DHL no reemplazó conductores — les dio superpoderes. Amazon no reemplazó trabajadores — 520 mil robots trabajan JUNTO a humanos. Este es el modelo de augmentación.&quot;">
+      <div class="slide-content">
+        <div class="split-layout">
+          <div class="split-left">
+            <h2 class="slide-heading">DHL Parcel Europe</h2>
+            <div class="table-wrapper compact">
+              <table>
+                <thead><tr><th>Resultado</th><th>Dato</th></tr></thead>
+                <tbody>
+                  <tr><td>Tiempos de entrega</td><td class="positive"><strong>-30%</strong></td></tr>
+                  <tr><td>Precisión de pronóstico</td><td class="positive"><strong>95%</strong></td></tr>
+                  <tr><td>Millas ahorradas/año</td><td class="positive"><strong>10 millones</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="split-right">
+            <h2 class="slide-heading">Amazon &middot; 520K+ robots IA</h2>
+            <div class="table-wrapper compact">
+              <table>
+                <thead><tr><th>Resultado</th><th>Dato</th></tr></thead>
+                <tbody>
+                  <tr><td>Costo fulfillment</td><td class="positive"><strong>-20%</strong></td></tr>
+                  <tr><td>Órdenes por hora</td><td class="positive"><strong>+40%</strong></td></tr>
+                  <tr><td>Precisión de picking</td><td class="positive"><strong>99.8%</strong></td></tr>
+                  <tr><td>Costo inventario</td><td class="positive"><strong>-USD 1,000M/año</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 11 — Puertos inteligentes -->
+    <section class="slide" data-notes="&quot;Qingdao es el futuro: terminal completamente automatizada con tecnología propia. Rotterdam es la referencia europea: un gemelo digital de todo el puerto — 40 kilómetros. Ambos demuestran que los puertos inteligentes son realidad operativa. ¿Y Panamá?&quot;">
+      <div class="slide-content">
+        <div class="split-layout">
+          <div class="split-left">
+            <h2 class="slide-heading">Qingdao, China</h2>
+            <p class="tag">Terminal 100% automatizada</p>
+            <ul class="feature-list">
+              <li>83 vehículos autónomos + grúas IA</li>
+              <li>Throughput aumentado &middot; Costos reducidos</li>
+              <li>Incidentes de seguridad casi eliminados</li>
+              <li><strong>Tecnología de manufactura local</strong></li>
+            </ul>
+          </div>
+          <div class="split-right">
+            <h2 class="slide-heading">Rotterdam, Países Bajos</h2>
+            <p class="tag">Digital twin de 40 km</p>
+            <ul class="feature-list">
+              <li>Monitoreo ambiental en tiempo real</li>
+              <li>Vehículos autónomos + grúas láser</li>
+              <li>Control rooms a <strong>3 km del puerto</strong></li>
+              <li>Predictive berthing: arribo al minuto</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 12 — Impacto consolidado -->
+    <section class="slide" data-notes="&quot;307% de ROI en control towers con IA — eso no es proyección, es medición. Detecta disrupciones 2-3 semanas antes. Para un hub como Panamá, donde una disrupción en el Canal afecta al 6% del comercio mundial, esto es infraestructura crítica.&quot;">
+      <div class="slide-content">
+        <h2 class="slide-heading">Cadenas de suministro habilitadas con IA</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Indicador</th><th>Mejora</th></tr></thead>
+            <tbody>
+              <tr><td>Reducción de inventario</td><td class="positive"><strong>35%</strong></td></tr>
+              <tr><td>Niveles de servicio</td><td class="positive"><strong>+65%</strong></td></tr>
+              <tr><td>Costos logísticos</td><td class="positive"><strong>-15%</strong></td></tr>
+              <tr><td>Capacidad de almacén (sin construcción nueva)</td><td class="positive"><strong>+15%</strong></td></tr>
+              <tr><td>Detección de disrupciones</td><td class="positive"><strong>2–3 semanas antes</strong></td></tr>
+              <tr><td>Redirección automática de envíos</td><td class="positive"><strong>89% de los casos</strong></td></tr>
+              <tr><td>Reducción de impacto por disrupción</td><td class="positive"><strong>-41%</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="bottom-stats">
+          <p class="highlight-text">ROI de control towers con IA: <strong>307%</strong></p>
+          <p class="highlight-text">Mercado IA en logística: <strong>USD 12.2B (2026) → USD 196.6B (2034)</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 13 — Agentes IA -->
+    <section class="slide" data-notes="&quot;Les voy a ahorrar dinero con este slide. Solo el 11% los tiene funcionando. Sean del 11% que funciona, no del 40% que se cancela.&quot;">
+      <div class="slide-content">
+        <h2 class="slide-heading">Agentes IA: La realidad detrás del hype</h2>
+        <p class="context-line">Deloitte 2026: Solo el 11% tiene agentes IA en producción</p>
+        <div class="split-layout">
+          <div class="split-left">
+            <div class="table-wrapper compact">
+              <table>
+                <thead><tr><th>Estado</th><th>%</th></tr></thead>
+                <tbody>
+                  <tr><td>En producción</td><td><strong>11%</strong></td></tr>
+                  <tr><td>En piloto</td><td><strong>38%</strong></td></tr>
+                  <tr><td>Desarrollando estrategia</td><td><strong>42%</strong></td></tr>
+                  <tr><td>Sin planes</td><td><strong>9%</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="warning-text">Gartner: &gt;40% de proyectos agentic serán cancelados para 2027</p>
+          </div>
+          <div class="split-right">
+            <h3 class="list-heading positive-heading">¿Dónde SÍ funcionan?</h3>
+            <ul class="feature-list">
+              <li>Conciliación automática de BL</li>
+              <li>Tracking proactivo inteligente</li>
+              <li>Procurement y selección de proveedores</li>
+              <li>Soporte operativo con datos en tiempo real</li>
+            </ul>
+            <h3 class="list-heading warning-heading">¿Dónde fracasan?</h3>
+            <p class="subtext">Decisiones complejas sin guardrails &middot; Datos no estructurados &middot; Sin gobernanza</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 14 — Sección: 3 Elevaciones -->
+    <section class="slide section-slide" data-notes="&quot;Ahora viene la idea más importante de esta keynote. Si se llevan una sola cosa, que sea esto.&quot;">
+      <div class="slide-content centered">
+        <h1 class="hero-title">Las 3 Elevaciones de la IA</h1>
+        <p class="section-sub">De automatizar tareas a transformar el negocio</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 15 — Las 3 Elevaciones detalle -->
+    <section class="slide" data-notes="&quot;La mayoría de ustedes probablemente está en la Elevación 1. Pero los que van a ganar en los próximos 3 años son los que lleguen a la 2 y 3. Maersk no automatizó el mantenimiento — lo transformó en inteligencia predictiva que ahorra 300 millones al año.&quot;">
+      <div class="slide-content">
+        <div class="elevations">
+          <div class="elevation-card">
+            <div class="elevation-number">1</div>
+            <h3>AUTOMATIZAR</h3>
+            <p>Eliminar trabajo administrativo repetitivo</p>
+            <p class="subtext"><em>Procesamiento de BL, facturas, documentos aduaneros</em></p>
+            <p class="highlight-text"><strong>&larr; Aquí está el 90% de la adopción actual</strong></p>
+          </div>
+          <div class="elevation-card active">
+            <div class="elevation-number">2</div>
+            <h3>AUMENTAR</h3>
+            <p>Mejorar toma de decisiones complejas</p>
+            <p class="subtext"><em>Demand sensing, ruteo dinámico, predicción de disrupciones</em></p>
+            <p class="highlight-text"><strong>Pocos líderes (Maersk, DHL, Rotterdam)</strong></p>
+          </div>
+          <div class="elevation-card featured">
+            <div class="elevation-number">3</div>
+            <h3>TRANSFORMAR</h3>
+            <p>Crear nuevos modelos de negocio y fuentes de ingreso</p>
+            <p class="subtext"><em>Tarifas dinámicas, logistics-as-a-service, cadenas auto-curativas</em></p>
+            <p class="highlight-text"><strong>Solo el top 6% — McKinsey</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 16 — Evidencia augmentación -->
+    <section class="slide" data-notes="&quot;Las empresas que aumentan capacidades humanas crecen 38% más en ingresos. Las que solo automatizan no muestran esos beneficios. Y expanden su fuerza laboral en 10% — la IA no destruye empleo cuando se usa para augmentar.&quot;">
+      <div class="slide-content centered">
+        <p class="context-line">Accenture: Empresas que invierten en colaboración humano-IA</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-number inline">+38%</span>
+            <span class="hero-label">crecimiento de ingresos</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-number inline">3x</span>
+            <span class="hero-label">más mejora en desempeño</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-number inline">+10%</span>
+            <span class="hero-label">expansión de fuerza laboral</span>
+          </div>
+        </div>
+        <p class="subtext">vs. empresas enfocadas <strong>solo</strong> en automatización → sin beneficios comparables</p>
+        <div class="bottom-stats">
+          <p class="highlight-text">Harvard/BCG: <strong>+12.2% tareas · +25.1% más rápido · +40% más calidad</strong></p>
+          <p class="highlight-text">EY: Fuerzas laborales aumentadas = <strong>2.4x mejor desempeño</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 17 — Self-healing supply chains -->
+    <section class="slide" data-notes="&quot;Muchos de ustedes vivieron la crisis del Canal 2023-2024. Los datos estaban ahí desde meses antes. Con un digital twin, un sistema de IA habría alertado meses antes del impacto. Eso es Elevación 3.&quot;">
+      <div class="slide-content">
+        <h2 class="slide-heading">Self-healing supply chains</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Capacidad</th><th>Dato</th></tr></thead>
+            <tbody>
+              <tr><td>Detección anticipada</td><td class="positive"><strong>2–3 semanas antes</strong></td></tr>
+              <tr><td>Redirección automática</td><td class="positive"><strong>89% de los casos</strong></td></tr>
+              <tr><td>Reducción de impacto</td><td class="positive"><strong>-41% promedio</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout warning">
+          <h3>¿Recuerdan la crisis del Canal de Panamá en 2023-2024?</h3>
+          <p>Barcos tuvieron que descargar hasta <strong>45% de su carga</strong> para poder transitar.</p>
+          <p class="highlight-text"><strong>Con IA + digital twins + datos climáticos, el riesgo se habría detectado meses antes.</strong></p>
+          <p>Las cadenas inteligentes habrían redirigido carga proactivamente — no reactivamente.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 18 — Sección: Riesgos -->
+    <section class="slide section-slide" data-notes="&quot;No sería responsable de mi parte solo mostrarles los beneficios. Hay riesgos reales que necesitan conocer antes de invertir.&quot;">
+      <div class="slide-content centered">
+        <h1 class="hero-title">Lo que no te dicen los vendors</h1>
+        <p class="section-sub">Porque la honestidad construye confianza</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 19 — Shadow AI -->
+    <section class="slide" data-notes="&quot;¿Cuántos de ustedes tienen una política formal de uso de IA en su empresa? Shadow AI es cuando tus empleados usan herramientas de IA sin autorización. En logística, donde manejas información sensible de comercio internacional, esto es exposición activa.&quot;">
+      <div class="slide-content">
+        <h2 class="slide-heading">Shadow AI: El riesgo más inmediato</h2>
+        <div class="data-block">
+          <p class="context-line">Solo el 40% tiene licencias oficiales de IA</p>
+          <p class="context-line">Pero el 90%+ de empleados ya usa IA personal para trabajo</p>
+        </div>
+        <h1 class="hero-number warning-color smaller">1 de cada 5<br><span class="hero-sub">brechas involucra Shadow AI</span></h1>
+        <p class="highlight-text">+ USD 670,000 de costo adicional por incidente — IBM 2025</p>
+        <div class="data-block">
+          <p class="highlight-text"><strong>Cisco:</strong> 46% filtración de datos vía GenAI</p>
+          <p class="highlight-text"><strong>Samsung:</strong> Código propietario pegado en ChatGPT</p>
+        </div>
+        <p class="warning-text">Para logística: datos de embarque, rutas, costos, contratos — ¿Quién controla dónde se procesan?</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 20 — Alucinaciones -->
+    <section class="slide" data-notes="&quot;Volkswagen perdió $7.5B. No por falta de presupuesto — por falta de método. Empieza pequeño, con datos de calidad, y escala desde ahí. Construcciones internas: 33% éxito. Con vendors especializados: 67%.&quot;">
+      <div class="slide-content">
+        <h2 class="slide-heading">Alucinaciones y fracasos documentados</h2>
+        <h1 class="hero-number warning-color smaller">7 / 1,000 prompts<br><span class="hero-sub">generan información falsa</span></h1>
+        <p class="highlight-text"><strong>47%</strong> tomó decisiones basadas en contenido alucinado</p>
+        <div class="table-wrapper compact">
+          <table>
+            <thead><tr><th>Caso</th><th>Costo</th><th>Lección</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Volkswagen/Cariad</strong></td><td class="negative">USD 7.5B</td><td>"Big bang" en vez de iterativo</td></tr>
+              <tr><td><strong>MIT: 70-85% iniciativas</strong></td><td class="negative">Sin resultados</td><td>Datos y procesos no listos</td></tr>
+              <tr><td><strong>Construcciones internas</strong></td><td class="negative">33% éxito</td><td>67% éxito con vendors</td></tr>
+              <tr><td><strong>30%+ GenAI</strong></td><td class="negative">Abandonados</td><td>Datos insuficientes</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="highlight-text">Las organizaciones exitosas invierten <strong>70% en personas y procesos</strong></p>
+      </div>
+    </section>
+
+    <!-- SLIDE 21 — Sección: Panamá -->
+    <section class="slide section-slide" data-notes="&quot;Aterricemos todo esto en nuestro contexto. Panamá tiene una posición estratégica única en la logística global.&quot;">
+      <div class="slide-content centered">
+        <h1 class="hero-title">Panamá: Hub logístico inteligente</h1>
+        <p class="section-sub">De la posición geográfica a la ventaja digital</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 22 — Panamá en números -->
+    <section class="slide" data-notes="&quot;Estos activos no se compran — se construyen en décadas. Panamá tiene la infraestructura, la conectividad, la moneda correcta, y dos tercios de la población positiva hacia la IA. En EE.UU., solo el 10%.&quot;">
+      <div class="slide-content">
+        <h2 class="slide-heading">La posición estratégica que nadie más tiene</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Activo</th><th>Dato</th></tr></thead>
+            <tbody>
+              <tr><td>Comercio mundial vía Canal</td><td><strong>6% del total global</strong></td></tr>
+              <tr><td>Zona Libre de Colón</td><td><strong>Mayor zona franca del hemisferio</strong></td></tr>
+              <tr><td>Data centers operativos</td><td><strong>14</strong></td></tr>
+              <tr><td>Cables submarinos</td><td><strong>8</strong></td></tr>
+              <tr><td>Moneda</td><td><strong>Dólar (cero riesgo cambiario)</strong></td></tr>
+              <tr><td>IED en tech 2025-2030</td><td><strong>35% del total</strong></td></tr>
+              <tr><td>Startups de IA</td><td><strong>139</strong></td></tr>
+              <tr><td>Actitud hacia IA (Senacyt)</td><td><strong>2/3 positivos</strong> (vs. 10% en EE.UU.)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 23 — Canal de Panamá -->
+    <section class="slide" data-notes="&quot;El Canal ya no es solo infraestructura física — se está convirtiendo en una plataforma digital. Las tarifas dinámicas son Elevación 3. La expansión de $7B incluye una plataforma inteligente de gestión de tránsito.&quot;">
+      <div class="slide-content">
+        <h2 class="slide-heading">Canal de Panamá: Transformación digital en marcha</h2>
+        <div class="split-layout three-col">
+          <div class="col">
+            <h3>Expansión USD 7B</h3>
+            <ul class="feature-list">
+              <li>Plataforma digital IA + IoT</li>
+              <li>Optimización de secuenciamiento</li>
+              <li>Minimización de espera</li>
+              <li><strong>+30% tránsitos diarios</strong></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Ya en operación</h3>
+            <ul class="feature-list">
+              <li><strong>Tarifas dinámicas</strong> con modelos analíticos</li>
+              <li>Digital twins para simulación</li>
+              <li>Plan Estratégico 2025-2035</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Nuevas terminales</h3>
+            <ul class="feature-list">
+              <li>Corozal y Telfers</li>
+              <li><strong>+5M TEU/año</strong></li>
+              <li>Buques hasta <strong>20,000 TEU</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 24 — IA operando en Panamá -->
+    <section class="slide" data-notes="&quot;BigBear.ai eligió Panamá — no Miami, no CDMX — para lanzar su solución a nivel global. Senacyt trabaja con Georgia Tech en una estrategia nacional. Esto no es futuro — está pasando.&quot;">
+      <div class="slide-content">
+        <h2 class="slide-heading">IA ya operando en Panamá</h2>
+        <div class="cards-grid">
+          <div class="info-card">
+            <h3>Seguridad de supply chain</h3>
+            <p><strong>BigBear.ai + Narval Holding</strong> (sep 2025)</p>
+            <p>Verificación biométrica + monitoreo en tiempo real</p>
+          </div>
+          <div class="info-card">
+            <h3>Banca / trade finance</h3>
+            <p><strong>Caja de Ahorros</strong> → "banco inteligente" (feb 2026)</p>
+            <p>58% de instituciones planea IA avanzada</p>
+          </div>
+          <div class="info-card">
+            <h3>Estrategia Nacional de IA</h3>
+            <p><strong>Senacyt + Georgia Tech</strong></p>
+            <p>4 pilares: ciudadanía, gobernanza, economía, alianzas</p>
+          </div>
+          <div class="info-card">
+            <h3>Logística inteligente</h3>
+            <p>IA para tráfico marítimo en el Canal</p>
+            <p>Pilotos de mantenimiento predictivo portuario</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 25 — La brecha -->
+    <section class="slide" data-notes="&quot;2.3 de 5 — estamos en la mitad inferior. La buena noticia: la brecha no es de infraestructura ni de actitud — es de talento, gobernanza y método. Y esas se pueden cerrar.&quot;">
+      <div class="slide-content centered">
+        <p class="context-line">Índice de madurez IA de Panamá</p>
+        <h1 class="hero-number warning-color">2.3 / 5.0</h1>
+        <p class="source">Elemente Consultora &middot; noviembre 2025 &middot; 230+ organizaciones</p>
+        <div class="table-wrapper compact" style="margin-top: 2rem;">
+          <table>
+            <thead><tr><th>Fortaleza</th><th>Brecha crítica</th></tr></thead>
+            <tbody>
+              <tr><td>Comunicaciones: 3.2/5.0</td><td class="negative">Déficit de <strong>~2,000 especialistas</strong></td></tr>
+              <tr><td>Tecnología: 3.0/5.0</td><td class="negative">Solo <strong>2%</strong> &gt;5% ingresos de IA</td></tr>
+              <tr><td>Líder regional open-source</td><td class="negative"><strong>42%</strong> rural sin internet</td></tr>
+              <tr><td>139 startups de IA</td><td class="negative"><strong>Sin legislación vigente</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="highlight-text">LatAm recibe solo el <strong>1.12%</strong> de la inversión global en IA</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 26 — Casos LatAm -->
+    <section class="slide" data-notes="&quot;Estos casos demuestran que se puede innovar desde la región. Los digital twins de Mercado Libre son directamente aplicables a la Zona Libre de Colón. Crediclub: -96% costos de auditoría. Ese tipo de ROI convence a un CFO.&quot;">
+      <div class="slide-content">
+        <h2 class="slide-heading">No necesitamos copiar a Silicon Valley</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Empresa</th><th>IA aplicada</th><th>Resultado</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Mercado Libre</strong></td><td>Digital twins almacenes</td><td class="positive"><strong>+40% eficiencia</strong></td></tr>
+              <tr><td><strong>Rappi</strong></td><td>RL asignación riders</td><td class="positive"><strong>-25% tiempos</strong></td></tr>
+              <tr><td><strong>Nubank</strong></td><td>Scoring ML alternativo</td><td class="positive"><strong>80M+ usuarios</strong></td></tr>
+              <tr><td><strong>BBVA México</strong></td><td>Asistente "Blue"</td><td class="positive"><strong>95% efectividad</strong></td></tr>
+              <tr><td><strong>Crediclub</strong></td><td>Azure OpenAI auditoría</td><td class="positive"><strong>-96% costo</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="highlight-text" style="margin-top: 2rem;">Mercado IA LatAm: <strong>USD 4.7B → USD 30B+ (2033)</strong></p>
+      </div>
+    </section>
+
+    <!-- SLIDE 27 — Sección: Cierre -->
+    <section class="slide section-slide" data-notes="&quot;Vamos a cerrar con algo concreto. No con promesas, con preguntas que pueden hacerse mañana en su oficina.&quot;">
+      <div class="slide-content centered">
+        <h1 class="hero-title">¿Qué hacer el lunes?</h1>
+        <p class="section-sub">De la conferencia a la acción</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 28 — Los 5 imperativos -->
+    <section class="slide" data-notes="&quot;Cinco puntos, uno por dedo. Si se llevan solo uno, que sea el segundo: la diferencia entre automatizar y augmentar es la diferencia entre ahorrar un poco y crecer un 38%.&quot;">
+      <div class="slide-content">
+        <div class="imperatives">
+          <div class="imperative">
+            <span class="imp-num">1</span>
+            <div>
+              <h3>La tecnología ya no es barrera</h3>
+              <p>Open-source gratuito &middot; Costo -280x &middot; IA local</p>
+              <p class="highlight-text"><strong>La barrera es organizacional</strong></p>
+            </div>
+          </div>
+          <div class="imperative">
+            <span class="imp-num">2</span>
+            <div>
+              <h3>Automatizar es necesario pero insuficiente</h3>
+              <p>Augmentación = <strong>3x mejora</strong> + <strong>38% más ingresos</strong></p>
+            </div>
+          </div>
+          <div class="imperative">
+            <span class="imp-num">3</span>
+            <div>
+              <h3>Panamá tiene ventana de oportunidad única</h3>
+              <p class="highlight-text"><strong>El primer hub logístico inteligente de LatAm</strong></p>
+            </div>
+          </div>
+          <div class="imperative">
+            <span class="imp-num">4</span>
+            <div>
+              <h3>La gobernanza no es opcional</h3>
+              <p>Shadow AI en 90%+ &middot; USD 670K por brecha</p>
+            </div>
+          </div>
+          <div class="imperative">
+            <span class="imp-num">5</span>
+            <div>
+              <h3>Invertir en talento es urgente</h3>
+              <p>2,000+ especialistas &middot; Prima salarial +56%</p>
+              <p class="highlight-text"><strong>Roles híbridos: logísticos que entienden IA</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 29 — Las 3 preguntas -->
+    <section class="slide" data-notes="Dar 5 segundos de silencio después de cada pregunta. &quot;No les pido que adopten IA mañana. Les pido que respondan estas tres preguntas antes de que termine la semana.&quot;">
+      <div class="slide-content centered">
+        <p class="context-line">Antes de irse:</p>
+        <div class="questions">
+          <h1 class="question-text"><span class="q-num">1.</span> ¿Qué proceso rediseñarías con IA — no solo automatizarías?</h1>
+          <h1 class="question-text"><span class="q-num">2.</span> ¿Quién gobierna tus datos hoy?</h1>
+          <h1 class="question-text"><span class="q-num">3.</span> ¿Qué talento necesitas que no tienes?</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 30 — Cierre -->
+    <section class="slide" data-notes="Cerrar con la frase. Pausa de 3 segundos. &quot;Gracias.&quot; Equipo de TECNASA disponible en el stand.">
+      <div class="slide-content centered">
+        <h2 class="slide-heading">Gracias</h2>
+        <div class="speaker-info final">
+          <p><strong>Ulises González</strong></p>
+          <p>Especialista en Transformación Digital e IA</p>
+          <p class="tecnasa-mention"><strong>TECNASA</strong> — Más de 50 años integrando soluciones de alta tecnología</p>
+          <p>tecnasa.com</p>
+        </div>
+        <blockquote class="closing-quote">
+          <p>&ldquo;La IA no reemplaza la inteligencia humana.</p>
+          <p>La amplifica.</p>
+          <p>La pregunta es: ¿qué vas a amplificar?&rdquo;</p>
+        </blockquote>
+      </div>
+    </section>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
